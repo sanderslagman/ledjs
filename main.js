@@ -9,7 +9,7 @@ inputs = document.getElementsByTagName('input');
         inputs[index].addEventListener('change', sendcmd, false);
       }
     }
-}
+});
   
 
 function led_on() {
