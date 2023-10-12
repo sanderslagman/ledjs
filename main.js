@@ -34,9 +34,9 @@ function led_on() {
     function sendvar(vrb) {
         if(vrb == 'allSame'){
             vrb = vrb + '/mainColor';
-           }
-      $.ajax('/' + vrb ) => {
-        console.log(response);
+        }
+        $.ajax('/' + vrb).done((response) => {
+            console.log(response);
       });
     }
   
