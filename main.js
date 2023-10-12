@@ -31,6 +31,14 @@ function led_on() {
         console.log(response);
       });
     }
+    function sendvar(vrb) {
+        if(vrb == 'allSame'){
+            vrb = vrb + '/mainColor';
+           }
+      $.ajax('/' + vrb ) => {
+        console.log(response);
+      });
+    }
   
     function update(event) {
       console.log(event.target.id + event.target.value);
