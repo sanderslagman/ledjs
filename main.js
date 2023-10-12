@@ -1,4 +1,18 @@
-    function led_on() {
+    var inputs, index, mainColor;
+$(function(){
+inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; index++) {
+      if (inputs[index].type == 'color') {
+        inputs[index].addEventListener('change', update, false);
+      }
+      else {
+        inputs[index].addEventListener('change', sendcmd, false);
+      }
+    }
+}
+  
+
+function led_on() {
       $.ajax('/test/on')
         .done(function (response) {
           console.log(response);
@@ -12,18 +26,6 @@
         });
       $('#toggle').html('<button class=\'btn btn-primary m-2\' onclick=\'led_on()\' id=\'on\'>ON</button>');
     }
-    var inputs, index, mainColor;
-  
-    inputs = document.getElementsByTagName('input');
-    for (index = 0; index < inputs.length; index++) {
-      if (inputs[index].type == 'color') {
-        inputs[index].addEventListener('change', update, false);
-      }
-      else {
-        inputs[index].addEventListener('change', sendcmd, false);
-      }
-    }
-  
     function sendcmd(event) {
       $.ajax(event.target.id + '/' + event.target.value).done((response) => {
         console.log(response);
