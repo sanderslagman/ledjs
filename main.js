@@ -1,16 +1,16 @@
-    function on() {
+    function led_on() {
       $.ajax('/test/on')
         .done(function (response) {
           console.log(response);
         });
-      $('#toggle').html('<button class=\'btn btn-secondary m-2\' onclick=\'off()\'>OFF</button>');
+      $('#toggle').html('<button class=\'btn btn-secondary m-2\' onclick=\'led_off()\'>OFF</button>');
     }
-    function off() {
+    function led_off() {
       $.ajax('/test/off')
         .done(function (response) {
           console.log(response);
         });
-      $('#toggle').html('<button class=\'btn btn-primary m-2\' onclick=\'on()\' id=\'on\'>ON</button>');
+      $('#toggle').html('<button class=\'btn btn-primary m-2\' onclick=\'led_on()\' id=\'on\'>ON</button>');
     }
     var inputs, index, mainColor;
   
