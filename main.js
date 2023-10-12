@@ -33,7 +33,7 @@ function led_on() {
     }
     function sendvar(vrb) {
         if(vrb == 'allSame'){
-            vrb = vrb + '/mainColor';
+            vrb = vrb + '/' + mainColor;
         }
         $.ajax('/' + vrb).done((response) => {
             console.log(response);
