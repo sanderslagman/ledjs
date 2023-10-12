@@ -1,4 +1,4 @@
-    var inputs, index, mainColor;
+var inputs, index, mainColor;
 $(function(){
 inputs = document.getElementsByTagName('input');
     for (index = 0; index < inputs.length; index++) {
